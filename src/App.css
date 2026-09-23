@@ -1,0 +1,11 @@
+/* ==========================================================================
+   APP ROOT STYLES
+   - Dedicated scoped styles for top-level App container
+   ========================================================================== */
+
+.app-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

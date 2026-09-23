@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Outer Rounded Geometric Container -->
+  <rect
+    x="6"
+    y="6"
+    width="108"
+    height="108"
+    rx="28"
+    fill="#121215"
+    stroke="#ff5722"
+    stroke-width="2.5"
+  />
+
+  <!-- Inner Contrast Chamber -->
+  <rect
+    x="12"
+    y="12"
+    width="96"
+    height="96"
+    rx="22"
+    fill="#0d0d0f"
+  />
+
+  <!-- ULTRA-STYLISH INTERLOCKING "SP" MONOGRAM -->
+  <g id="sp-brand-mark">
+    <!-- "S" Geometric Ribbon (Electric Orange #ff5722) -->
+    <!-- Top Cap of S -->
+    <path
+      d="M50 28H34C25.1634 28 18 35.1634 18 44C18 52.8366 25.1634 60 34 60H52"
+      stroke="#ff5722"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Bottom Hook of S -->
+    <path
+      d="M34 60H52C60.8366 60 68 67.1634 68 76C68 84.8366 60.8366 92 52 92H30"
+      stroke="#ff5722"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- "P" Futuristic Pillar & Loop (Crisp Pure White #ffffff) -->
+    <!-- Vertical Spine -->
+    <path
+      d="M74 92V28"
+      stroke="#ffffff"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+    <!-- Rounded Head of P -->
+    <path
+      d="M74 28H88C96.8366 28 104 35.1634 104 44C104 52.8366 96.8366 60 88 60H74"
+      stroke="#ffffff"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Dynamic Tech Accent Cuts -->
+    <circle cx="89" cy="44" r="4" fill="#ff5722" />
+    <circle cx="28" cy="92" r="4" fill="#10b981" />
+  </g>
+</svg>
