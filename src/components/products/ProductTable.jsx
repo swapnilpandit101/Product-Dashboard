@@ -104,27 +104,27 @@ export const ProductTable = memo(function ProductTable({
                       onClick={() => onView(product.id)}
                       className="product-table-action-btn product-table-btn-view"
                       title="View Details"
+                      aria-label="View Details"
                     >
-                      <Eye size={13} />
-                      <span>View</span>
+                      <Eye size={15} />
                     </button>
                     <button
                       type="button"
                       onClick={() => onEdit(product.id)}
                       className="product-table-action-btn product-table-btn-edit"
                       title="Edit Product"
+                      aria-label="Edit Product"
                     >
-                      <Pencil size={13} />
-                      <span>Edit</span>
+                      <Pencil size={15} />
                     </button>
                     <button
                       type="button"
                       onClick={() => onDelete(product)}
                       className="product-table-action-btn product-table-btn-delete"
                       title="Delete Product"
+                      aria-label="Delete Product"
                     >
-                      <Trash2 size={13} />
-                      <span>Delete</span>
+                      <Trash2 size={15} />
                     </button>
                   </div>
                 </td>

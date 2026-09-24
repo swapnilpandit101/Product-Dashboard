@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { productService } from '../services/product.service';
 import { ProductForm } from '../components/products/ProductForm';
 import { Loading } from '../components/common/Loading';
+import { useToast } from '../context/ToastContext';
 import './CreateProductPage.css';
 
 /**
@@ -44,18 +45,25 @@ export function CreateProductPage() {
     };
   }, []);
 
+  const toast = useToast();
+
   const handleCreate = async (formData) => {
     try {
       setIsSubmitting(true);
       setError('');
       await productService.addProduct(formData);
+      toast.success(
+        `Product "${formData.title}" was created successfully!`,
+        'Product Created'
+      );
       // Client-side SPA navigation back to products inventory
       navigate('/products');
     } catch (err) {
-      setError(
+      const msg =
         err.response?.data?.message ||
-          'Failed to add product. Please check input values and try again.'
-      );
+        'Failed to add product. Please check input values and try again.';
+      setError(msg);
+      toast.error(msg, 'Creation Error');
     } finally {
       setIsSubmitting(false);
     }

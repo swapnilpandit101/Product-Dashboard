@@ -115,8 +115,11 @@
 .product-table-discount-badge {
   margin-left: 6px;
   font-size: 11px;
-  font-weight: 700;
-  color: var(--status-in-stock);
+  font-weight: 800;
+  color: #ffffff;
+  background-color: #ef4444;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
 }
 
 .product-table-rating-cell {
@@ -140,69 +143,72 @@
 }
 
 .product-table-stock-ok {
-  background-color: rgba(16, 185, 129, 0.15);
-  color: var(--status-in-stock);
-  border: 1px solid var(--status-in-stock);
+  background-color: #14532d;
+  color: #86efac;
+  border: 1px solid #166534;
 }
 
 .product-table-stock-low {
-  background-color: rgba(245, 158, 11, 0.15);
-  color: var(--status-low-stock);
-  border: 1px solid var(--status-low-stock);
+  background-color: #713f12;
+  color: #fde047;
+  border: 1px solid #854d0e;
 }
 
 .product-table-stock-out {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: var(--status-out-stock);
-  border: 1px solid var(--status-out-stock);
+  background-color: #7f1d1d;
+  color: #fca5a5;
+  border: 1px solid #991b1b;
 }
 
 .product-table-action-group {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
 }
 
 .product-table-action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 600;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   border-radius: var(--radius-sm);
-  white-space: nowrap;
-  transition: background-color 0.15s ease;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .product-table-btn-view {
-  background-color: var(--bg-surface-subtle);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: #000;
+
 }
 
 .product-table-btn-view:active {
-  background-color: #27272a;
+  background-color: #ffffff;
+  color: #000;
+
+  border-color: #ffffff;
 }
 
 .product-table-btn-edit {
-  background-color: var(--color-brand-orange-subtle);
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
+  background-color: #ffffff;
+  color: #1868db;
 }
 
 .product-table-btn-edit:active {
-  background-color: var(--color-brand-orange);
+  background-color: #1868db;
   color: #ffffff;
 }
 
 .product-table-btn-delete {
-  background-color: var(--color-danger-subtle);
-  color: var(--color-danger);
-  border: 1px solid var(--color-danger);
+  background-color: #ffffff;
+  color: red;
 }
 
 .product-table-btn-delete:active {
-  background-color: var(--color-danger);
+  background-color: red;
   color: #ffffff;
+
 }

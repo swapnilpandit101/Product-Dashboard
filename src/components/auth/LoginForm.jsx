@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { validateLoginForm } from '../../utils/validation';
+import { useToast } from '../../context/ToastContext';
 import './LoginForm.css';
 
 /**
@@ -14,6 +15,7 @@ import './LoginForm.css';
  *    and semantic form inputs with explicit labels and aria-invalid attributes.
  */
 export function LoginForm({ onSubmit, error: apiError }) {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     username: 'emilys', // prefilled for instant developer evaluation
     password: 'emilyspass',
@@ -43,6 +45,21 @@ export function LoginForm({ onSubmit, error: apiError }) {
     const validation = validateLoginForm(formData);
     if (!validation.isValid) {
       setErrors(validation.errors);
+      toast.error(
+        'Please fill up all mandatory fields.',
+        'Required Fields Missing'
+      );
+
+      const firstField = ['username', 'password'].find((f) => validation.errors[f]);
+      if (firstField) {
+        setTimeout(() => {
+          const element = document.getElementById(`login-${firstField}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            element.focus({ preventScroll: true });
+          }
+        }, 50);
+      }
       return;
     }
 

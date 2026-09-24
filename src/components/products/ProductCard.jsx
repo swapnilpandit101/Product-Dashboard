@@ -78,25 +78,28 @@ export const ProductCard = memo(function ProductCard({
           type="button"
           onClick={() => onView(product.id)}
           className="product-card-btn product-card-btn-view"
+          title="View Details"
+          aria-label="View Details"
         >
-          <Eye size={13} />
-          <span>View</span>
+          <Eye size={16} />
         </button>
         <button
           type="button"
           onClick={() => onEdit(product.id)}
           className="product-card-btn product-card-btn-edit"
+          title="Edit Product"
+          aria-label="Edit Product"
         >
-          <Pencil size={13} />
-          <span>Edit</span>
+          <Pencil size={16} />
         </button>
         <button
           type="button"
           onClick={() => onDelete(product)}
           className="product-card-btn product-card-btn-delete"
+          title="Delete Product"
+          aria-label="Delete Product"
         >
-          <Trash2 size={13} />
-          <span>Delete</span>
+          <Trash2 size={16} />
         </button>
       </div>
     </div>

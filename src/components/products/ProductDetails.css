@@ -57,24 +57,27 @@
 }
 
 .product-details-btn-edit {
-  background-color: var(--color-brand-orange);
-  color: #ffffff;
-  border: 1px solid var(--color-brand-orange);
+  background-color: #ffffff;
+  color: #1868db;
+  border: 1px solid #ffffff;
 }
 
 .product-details-btn-edit:active {
-  background-color: var(--color-brand-orange-active);
+  background-color: #1868db;
+  color: #ffffff;
+  border-color: #1868db;
 }
 
 .product-details-btn-delete {
-  background-color: var(--color-danger-subtle);
-  color: var(--color-danger);
-  border: 1px solid var(--color-danger);
+  background-color: #ffffff;
+  color: red;
+  border: 1px solid #ffffff;
 }
 
 .product-details-btn-delete:active {
-  background-color: var(--color-danger);
+  background-color: red;
   color: #ffffff;
+  border-color: red;
 }
 
 .product-details-grid {
@@ -202,13 +205,15 @@
 }
 
 .product-details-discount-badge {
-  padding: 2px 8px;
-  background-color: rgba(16, 185, 129, 0.15);
-  color: var(--status-in-stock);
-  border: 1px solid var(--status-in-stock);
+  padding: 3px 10px;
+  background-color: #ef4444;
+  color: #ffffff;
   border-radius: var(--radius-sm);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .product-details-description {

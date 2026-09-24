@@ -29,18 +29,22 @@
   font-size: 20px;
   padding: 6px 10px;
   border-radius: var(--radius-sm);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  background-color: #27272a;
+  color: #000000;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
 }
 
 .navbar-menu-btn:active {
-  background-color: var(--color-brand-orange);
-  border-color: var(--color-brand-orange);
+  background-color: #e4e4e7;
+  border-color: #e4e4e7;
+  color: #000000;
 }
 
 .navbar-menu-icon {
   display: block;
+  color: #000000;
 }
 
 .navbar-brand-mobile {
@@ -52,11 +56,27 @@
 .navbar-brand-badge {
   background-color: var(--color-brand-orange);
   color: #ffffff;
-  padding: 4px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 3px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand-img {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
 }
 
 .navbar-brand-text {
@@ -64,6 +84,7 @@
   font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .navbar-title {
@@ -89,7 +110,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: var(--color-brand-orange-subtle);
+
   color: var(--color-brand-orange);
   border: 1px solid var(--color-brand-orange);
   font-family: var(--font-family-heading);
@@ -119,15 +140,16 @@
 .navbar-logout-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 8px 14px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-danger);
-  border: 1px solid var(--color-danger);
-  background-color: var(--bg-surface-subtle);
+  color: orangered;
   border-radius: var(--radius-sm);
-  transition: background-color 0.15s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .navbar-logout-btn:active {
@@ -137,23 +159,57 @@
 
 .navbar-logout-icon {
   color: inherit;
+  flex-shrink: 0;
 }
 
-/* Responsive Breakpoint for Mobile & Tablet */
+.navbar-logout-text {
+  display: inline;
+}
+
+/* Tablet & Mobile Responsiveness (hide logout text, show icon only) */
+@media (max-width: 900px) {
+  .navbar-logout-text {
+    display: none;
+  }
+
+  .navbar-logout-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: var(--radius-sm);
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
-    left: 0;
-    padding: 0 16px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .navbar-left {
+    gap: 8px;
+  }
+
+  .navbar-right {
+    gap: 8px;
   }
 
   .navbar-menu-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
   }
 
   .navbar-brand-mobile {
     display: flex;
+    gap: 6px;
+  }
+
+  .navbar-brand-text {
+    font-size: 14px;
   }
 
   .navbar-title {
@@ -162,5 +218,34 @@
 
   .navbar-user-info {
     display: none;
+  }
+
+  .navbar-user-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    padding: 0 8px;
+    gap: 4px;
+  }
+
+  .navbar-brand-text {
+    font-size: 13px;
+  }
+
+  .navbar-user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .navbar-logout-btn,
+  .navbar-menu-btn {
+    width: 32px;
+    height: 32px;
   }
 }

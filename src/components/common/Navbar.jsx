@@ -37,9 +37,15 @@ export function Navbar({ onToggleSidebar, title = 'Product Dashboard' }) {
 
         <div className="navbar-brand-mobile">
           <div className="navbar-brand-badge">
-            <Package size={16} />
+            <img
+              src="/favicon.svg"
+              alt="SP Admin Logo"
+              className="navbar-brand-img"
+              width="20"
+              height="20"
+            />
           </div>
-          <span className="navbar-brand-text">AdminPanel</span>
+          <span className="navbar-brand-text">SP Admin</span>
         </div>
 
         <h1 className="navbar-title">{title}</h1>
@@ -64,9 +70,11 @@ export function Navbar({ onToggleSidebar, title = 'Product Dashboard' }) {
           type="button"
           onClick={handleLogout}
           className="navbar-logout-btn"
+          title="Logout"
+          aria-label="Logout"
         >
-          <LogOut size={15} className="navbar-logout-icon" />
-          <span>Logout</span>
+          <LogOut size={16} className="navbar-logout-icon" />
+          <span className="navbar-logout-text">Logout</span>
         </button>
       </div>
     </header>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import { LoginForm } from '../components/auth/LoginForm';
 import { LoginIllustration } from '../components/auth/LoginIllustration';
 import './LoginPage.css';
@@ -15,18 +16,21 @@ import './LoginPage.css';
 export function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const toast = useToast();
   const [error, setError] = useState('');
 
   const handleLogin = async (credentials) => {
     try {
       setError('');
       await login(credentials);
+      toast.success('Signed in successfully! Welcome to SP Admin.', 'Login Successful');
       navigate('/products');
     } catch (err) {
       const message =
         err.response?.data?.message ||
         'Invalid credentials. Please verify your username and password.';
       setError(message);
+      toast.error(message, 'Authentication Failed');
     }
   };
 

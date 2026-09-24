@@ -1,0 +1,135 @@
+/* ==========================================================================
+   TOAST NOTIFICATION COMPONENT STYLES
+   - Prefix: toast-*
+   - Top-Center Positioning
+   - Solid Flat Backgrounds (Red & Green ONLY, Zero Gradients)
+   ========================================================================== */
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 99999;
+  max-width: 480px;
+  width: calc(100% - 32px);
+  pointer-events: none;
+}
+
+.toast-item {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  width: 100%;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  animation: toast-slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.toast-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toast-title {
+  font-family: var(--font-family-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.toast-message {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1.4;
+  word-break: break-word;
+  font-weight: 500;
+}
+
+.toast-close-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.toast-close-btn:active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   SOLID 2-COLOR VARIANTS (ZERO GRADIENTS)
+   ========================================================================== */
+
+/* 1. RED (Error & Warning) */
+.toast-item-error,
+.toast-item-warning {
+  background-color: #dc2626;
+  border: 1px solid #b91c1c;
+}
+
+/* 2. GREEN (Success & Info) */
+.toast-item-success,
+.toast-item-info {
+  background-color: #16a34a;
+  border: 1px solid #15803d;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .toast-container {
+    top: 14px;
+    width: calc(100% - 24px);
+  }
+
+  .toast-item {
+    padding: 10px 14px;
+  }
+
+  .toast-title {
+    font-size: 13px;
+  }
+
+  .toast-message {
+    font-size: 12px;
+  }
+}

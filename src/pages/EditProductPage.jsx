@@ -5,6 +5,7 @@ import { productService } from '../services/product.service';
 import { ProductForm } from '../components/products/ProductForm';
 import { Loading } from '../components/common/Loading';
 import { ErrorState } from '../components/common/ErrorState';
+import { useToast } from '../context/ToastContext';
 import './EditProductPage.css';
 
 /**
@@ -17,6 +18,7 @@ import './EditProductPage.css';
 export function EditProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const toast = useToast();
 
   const [product, setProduct] = useState(null);
   const [categories, setCategories] = useState([]);
@@ -54,13 +56,18 @@ export function EditProductPage() {
       setIsSubmitting(true);
       setSubmitError('');
       await productService.updateProduct(id, formData);
+      toast.success(
+        `Product "${formData.title}" was updated successfully!`,
+        'Product Updated'
+      );
       // Navigate client-side back to products catalog
       navigate('/products');
     } catch (err) {
-      setSubmitError(
+      const msg =
         err.response?.data?.message ||
-          'Failed to update product. Please check input values and try again.'
-      );
+        'Failed to update product. Please check input values and try again.';
+      setSubmitError(msg);
+      toast.error(msg, 'Update Error');
     } finally {
       setIsSubmitting(false);
     }

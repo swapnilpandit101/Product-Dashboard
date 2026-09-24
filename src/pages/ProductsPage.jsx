@@ -13,6 +13,7 @@ import { Loading } from '../components/common/Loading';
 import { ErrorState } from '../components/common/ErrorState';
 import { EmptyState } from '../components/common/EmptyState';
 import { ConfirmModal } from '../components/common/ConfirmModal';
+import { useToast } from '../context/ToastContext';
 import './ProductsPage.css';
 
 /**
@@ -301,8 +302,12 @@ export function ProductsPage() {
     }
   }, [isDeleting]);
 
+  const toast = useToast();
+
   const handleConfirmDelete = async () => {
     if (!deleteProductTarget || isDeleting) return;
+
+    const targetTitle = deleteProductTarget.title;
 
     try {
       setIsDeleting(true);
@@ -314,13 +319,18 @@ export function ProductsPage() {
       );
       setTotal((prev) => Math.max(0, prev - 1));
 
+      toast.success(
+        `Product "${targetTitle}" was removed successfully.`,
+        'Product Deleted'
+      );
+
       // Close modal
       setDeleteProductTarget(null);
     } catch (err) {
-      alert(
+      const msg =
         err.response?.data?.message ||
-          'Failed to delete product. Please try again.'
-      );
+        'Failed to delete product. Please try again.';
+      toast.error(msg, 'Delete Error');
     } finally {
       setIsDeleting(false);
     }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { validateProductForm } from '../../utils/validation';
+import { useToast } from '../../context/ToastContext';
 import './ProductForm.css';
 
 /**
@@ -9,6 +10,8 @@ import './ProductForm.css';
  * 1. Single Source of Truth: Product schema, input fields, and validation logic are defined once.
  * 2. Mode-Driven Behavior: Adapts button labels, titles, and submission handlers based on `mode` ('create' | 'edit').
  * 3. Duplicate Request Protection: Locks the submit button with `isSubmitting` state during active API calls.
+ * 4. UX Accessibility: Automatically shows top toast notifications on validation failure and smoothly scrolls to
+ *    the topmost unfilled mandatory field.
  */
 export function ProductForm({
   mode = 'create', // 'create' | 'edit'
@@ -19,6 +22,7 @@ export function ProductForm({
   isSubmitting = false,
   error = '',
 }) {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -48,6 +52,13 @@ export function ProductForm({
     }
   }, [initialData]);
 
+  // Show API error via toast when passed
+  useEffect(() => {
+    if (error) {
+      toast.error(error, 'Submission Failed');
+    }
+  }, [error, toast]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -63,6 +74,28 @@ export function ProductForm({
     const validation = validateProductForm(formData);
     if (!validation.isValid) {
       setValidationErrors(validation.errors);
+      
+      // Trigger Top Toast Message
+      toast.error(
+        'Please fill up all mandatory fields.',
+        'Required Fields Missing'
+      );
+
+      // Smoothly scroll to the topmost unfilled mandatory field
+      const fieldOrder = ['title', 'description', 'category', 'price', 'stock'];
+      const firstInvalidField = fieldOrder.find((field) => validation.errors[field]);
+      
+      if (firstInvalidField) {
+        setTimeout(() => {
+          const element =
+            document.getElementById(`product-${firstInvalidField}`) ||
+            document.querySelector(`[name="${firstInvalidField}"]`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            element.focus({ preventScroll: true });
+          }
+        }, 50);
+      }
       return;
     }
 

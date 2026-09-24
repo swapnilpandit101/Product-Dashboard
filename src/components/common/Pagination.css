@@ -132,20 +132,30 @@
   padding: 0 8px;
 }
 
-/* Responsive Breakpoint for Mobile Pagination */
+/* Responsive Breakpoints for Tablet and Mobile Pagination */
 @media (max-width: 768px) {
   .pagination {
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px 14px;
+    box-sizing: border-box;
   }
 
   .pagination-info {
     text-align: center;
+    font-size: 13px;
+    width: 100%;
   }
 
   .pagination-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .pagination-size-selector {
     justify-content: center;
     width: 100%;
   }
@@ -155,6 +165,50 @@
   }
 
   .pagination-indicator-mobile {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 0 4px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .pagination-buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .pagination-btn-prev,
+  .pagination-btn-next {
+    flex: 0 0 auto;
+    min-width: 88px;
+    height: 38px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .pagination {
+    padding: 12px 10px;
+    gap: 12px;
+  }
+
+  .pagination-btn-prev,
+  .pagination-btn-next {
+    min-width: 76px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .pagination-indicator-mobile {
+    font-size: 12px;
   }
 }

@@ -36,21 +36,33 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 }
 
 .sidebar-brand-badge {
   background-color: var(--color-brand-orange);
   color: #ffffff;
-  padding: 6px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  flex-shrink: 0;
+  padding: 4px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .sidebar-brand-icon,
 .sidebar-brand-img {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  flex-shrink: 0;
   display: block;
   object-fit: contain;
 }
@@ -61,22 +73,25 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .sidebar-mobile-close-btn {
   display: none;
   font-size: 20px;
-  color: var(--text-primary);
+  color: #000000;
   padding: 6px 10px;
-  background-color: #27272a;
-  border: 1px solid #3f3f46;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   border-radius: var(--radius-sm);
   margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
 }
 
 .sidebar-mobile-close-btn:active {
-  background-color: var(--color-brand-orange);
-  border-color: var(--color-brand-orange);
+  background-color: #e4e4e7;
+  border-color: #e4e4e7;
 }
 
 .sidebar-navigation {
