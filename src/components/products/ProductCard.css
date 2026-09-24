@@ -1,0 +1,191 @@
+/* ==========================================================================
+   PRODUCT CARD COMPONENT STYLES (MOBILE)
+   - Prefix: product-card-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.product-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.product-card-top {
+  display: flex;
+  gap: 14px;
+}
+
+.product-card-image-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+}
+
+.product-card-no-image {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-dim);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.product-card-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.product-card-category {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-brand-orange);
+  letter-spacing: 0.5px;
+}
+
+.product-card-title {
+  font-family: var(--font-family-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.product-card-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.product-card-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.product-card-discount {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--status-in-stock);
+}
+
+.product-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.product-card-rating-val {
+  font-weight: 600;
+}
+
+.product-card-stock {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.product-card-stock-ok {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--status-in-stock);
+  border: 1px solid var(--status-in-stock);
+}
+
+.product-card-stock-low {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--status-low-stock);
+  border: 1px solid var(--status-low-stock);
+}
+
+.product-card-stock-out {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--status-out-stock);
+  border: 1px solid var(--status-out-stock);
+}
+
+.product-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.product-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: background-color 0.15s ease;
+}
+
+.product-card-btn-view {
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.product-card-btn-view:active {
+  background-color: #27272a;
+}
+
+.product-card-btn-edit {
+  background-color: var(--color-brand-orange-subtle);
+  color: var(--color-brand-orange);
+  border: 1px solid var(--color-brand-orange);
+}
+
+.product-card-btn-edit:active {
+  background-color: var(--color-brand-orange);
+  color: #ffffff;
+}
+
+.product-card-btn-delete {
+  background-color: var(--color-danger-subtle);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.product-card-btn-delete:active {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}

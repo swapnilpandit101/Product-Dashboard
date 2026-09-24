@@ -1,0 +1,64 @@
+/* ==========================================================================
+   LOADING COMPONENT STYLES
+   - Prefix: loading-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  width: 100%;
+  gap: 14px;
+}
+
+.loading-fullpage {
+  height: 100%;
+  flex: 1;
+}
+
+.loading-spinner {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #27272a;
+  border-top-color: var(--color-brand-orange);
+  animation: loading-spin 0.8s linear infinite;
+}
+
+.loading-spinner-sm {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.loading-spinner-md {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+.loading-spinner-lg {
+  width: 50px;
+  height: 50px;
+  border-width: 4px;
+}
+
+.loading-message {
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

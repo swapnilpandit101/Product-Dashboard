@@ -1,0 +1,64 @@
+/* ==========================================================================
+   ERROR STATE COMPONENT STYLES
+   - Prefix: error-state-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.error-state-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-danger-subtle);
+  color: var(--color-danger);
+  border: 2px solid var(--color-danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-state-title {
+  font-family: var(--font-family-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.error-state-message {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 480px;
+}
+
+.error-state-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: var(--color-danger);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-danger);
+  transition: background-color 0.15s ease;
+}
+
+.error-state-retry-btn:active {
+  background-color: var(--color-danger-active);
+}

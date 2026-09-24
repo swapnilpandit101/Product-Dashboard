@@ -1,0 +1,101 @@
+/* ==========================================================================
+   PRODUCTS PAGE STYLES
+   - Prefix: products-page-*, products-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   - Strict Rule: Zero min/max width/height on major containers
+   ========================================================================== */
+
+.products-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.products-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.products-page-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.products-page-title {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.products-page-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.products-page-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background-color: var(--color-brand-orange);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-brand-orange);
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.products-page-add-btn:active {
+  background-color: var(--color-brand-orange-active);
+  transform: scale(0.98);
+}
+
+/* Responsive View Switch: Table on Desktop, Cards on Mobile */
+.products-desktop-view {
+  display: block;
+  width: 100%;
+}
+
+.products-mobile-view {
+  display: none;
+  width: 100%;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 768px) {
+  .products-page {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .products-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .products-page-add-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .products-desktop-view {
+    display: none;
+  }
+
+  .products-mobile-view {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}

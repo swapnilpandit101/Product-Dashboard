@@ -1,0 +1,208 @@
+/* ==========================================================================
+   PRODUCT TABLE COMPONENT STYLES
+   - Prefix: product-table-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.product-table-wrapper {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.product-table-head {
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-table-th {
+  padding: 14px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.product-table-row {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s ease;
+}
+
+.product-table-row:last-child {
+  border-bottom: none;
+}
+
+.product-table-td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.product-table-td-image {
+  width: 64px;
+}
+
+.product-table-thumbnail {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+}
+
+.product-table-no-image {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-dim);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.product-table-td-title {
+  max-width: 240px;
+}
+
+.product-table-title-text {
+  font-family: var(--font-family-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.product-table-brand-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.product-table-category-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.product-table-price-value {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.product-table-discount-badge {
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--status-in-stock);
+}
+
+.product-table-rating-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.product-table-rating-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.product-table-stock-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.product-table-stock-ok {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--status-in-stock);
+  border: 1px solid var(--status-in-stock);
+}
+
+.product-table-stock-low {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--status-low-stock);
+  border: 1px solid var(--status-low-stock);
+}
+
+.product-table-stock-out {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--status-out-stock);
+  border: 1px solid var(--status-out-stock);
+}
+
+.product-table-action-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.product-table-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.product-table-btn-view {
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.product-table-btn-view:active {
+  background-color: #27272a;
+}
+
+.product-table-btn-edit {
+  background-color: var(--color-brand-orange-subtle);
+  color: var(--color-brand-orange);
+  border: 1px solid var(--color-brand-orange);
+}
+
+.product-table-btn-edit:active {
+  background-color: var(--color-brand-orange);
+  color: #ffffff;
+}
+
+.product-table-btn-delete {
+  background-color: var(--color-danger-subtle);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.product-table-btn-delete:active {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}

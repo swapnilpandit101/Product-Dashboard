@@ -1,0 +1,60 @@
+/* ==========================================================================
+   EDIT PRODUCT PAGE STYLES
+   - Prefix: edit-product-page-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   - Strict Rule: Zero min/max width/height on major containers
+   ========================================================================== */
+
+.edit-product-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.edit-product-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.edit-product-page-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.edit-product-page-back-btn:active {
+  background-color: #27272a;
+}
+
+.edit-product-page-title {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.edit-product-page-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .edit-product-page {
+    padding: 16px;
+  }
+}

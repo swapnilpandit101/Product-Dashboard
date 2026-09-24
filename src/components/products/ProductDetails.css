@@ -1,0 +1,375 @@
+/* ==========================================================================
+   PRODUCT DETAILS COMPONENT STYLES
+   - Prefix: product-details-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.product-details-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.product-details-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: background-color 0.15s ease;
+}
+
+.product-details-btn-back:active {
+  background-color: #27272a;
+}
+
+.product-details-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-details-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s ease;
+}
+
+.product-details-btn-edit {
+  background-color: var(--color-brand-orange);
+  color: #ffffff;
+  border: 1px solid var(--color-brand-orange);
+}
+
+.product-details-btn-edit:active {
+  background-color: var(--color-brand-orange-active);
+}
+
+.product-details-btn-delete {
+  background-color: var(--color-danger-subtle);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.product-details-btn-delete:active {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+
+.product-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.product-details-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-details-main-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-details-no-image {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.product-details-thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.product-details-thumb-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-surface-subtle);
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 2px;
+}
+
+.product-details-thumb-active {
+  border-color: var(--color-brand-orange);
+}
+
+.product-details-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-details-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-details-category-badge {
+  padding: 4px 12px;
+  background-color: var(--bg-surface-subtle);
+  color: var(--color-brand-orange);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.product-details-sku {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-family-mono);
+}
+
+.product-details-title {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.product-details-brand {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.product-details-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.product-details-price {
+  font-family: var(--font-family-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.product-details-discount-badge {
+  padding: 2px 8px;
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--status-in-stock);
+  border: 1px solid var(--status-in-stock);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.product-details-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.product-details-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.product-details-metric-card {
+  padding: 14px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-details-metric-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.product-details-metric-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.product-details-metric-rating-val {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.product-details-metric-feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.product-details-metric-icon {
+  color: var(--color-brand-orange);
+  flex-shrink: 0;
+}
+
+.product-details-stock-ok {
+  color: var(--status-in-stock);
+}
+
+.product-details-stock-low {
+  color: var(--status-low-stock);
+}
+
+.product-details-stock-out {
+  color: var(--status-out-stock);
+}
+
+.product-details-reviews-section {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-details-reviews-title {
+  font-family: var(--font-family-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-details-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-details-review-card {
+  padding: 14px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-details-review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-details-reviewer-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.product-details-review-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.product-details-review-comment {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.product-details-review-date {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* Tablet & Mobile Breakpoint */
+@media (max-width: 768px) {
+  .product-details-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .product-details-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-details-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-details-actions {
+    width: 100%;
+  }
+
+  .product-details-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

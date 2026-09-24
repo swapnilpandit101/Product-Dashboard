@@ -1,0 +1,178 @@
+/* ==========================================================================
+   SIDEBAR COMPONENT STYLES
+   - Prefix: sidebar-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background-color: var(--bg-sidebar);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  border-right: 1px solid var(--border-sidebar);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-header {
+  padding: 14px 12px 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.sidebar-brand-box {
+  background-color: var(--bg-brand-box);
+  border: 1px solid #2a2a2e;
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.sidebar-brand-badge {
+  background-color: var(--color-brand-orange);
+  color: #ffffff;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-brand-icon,
+.sidebar-brand-img {
+  display: block;
+  object-fit: contain;
+}
+
+.sidebar-brand-text {
+  font-family: var(--font-family-heading);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+.sidebar-mobile-close-btn {
+  display: none;
+  font-size: 20px;
+  color: var(--text-primary);
+  padding: 6px 10px;
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: var(--radius-sm);
+  margin-left: 8px;
+}
+
+.sidebar-mobile-close-btn:active {
+  background-color: var(--color-brand-orange);
+  border-color: var(--color-brand-orange);
+}
+
+.sidebar-navigation {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+.sidebar-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 0 12px 8px 12px;
+  font-weight: 600;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-item-icon {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.sidebar-item-label {
+  flex: 1;
+}
+
+.sidebar-item-active {
+  background-color: var(--bg-surface-active);
+  color: var(--color-brand-orange);
+  font-weight: 600;
+  border: 1px solid #2d2d34;
+}
+
+.sidebar-item-active .sidebar-item-icon {
+  color: var(--color-brand-orange);
+}
+
+.sidebar-item:active:not(.sidebar-item-active) {
+  background-color: #1e1e22;
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-sidebar);
+}
+
+.sidebar-footer-text {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* Tablet & Mobile Breakpoint */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    z-index: 500;
+  }
+
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-mobile-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 400;
+  }
+}

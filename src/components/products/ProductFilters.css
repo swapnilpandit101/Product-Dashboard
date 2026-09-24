@@ -1,0 +1,151 @@
+/* ==========================================================================
+   PRODUCT FILTERS COMPONENT STYLES
+   - Prefix: product-filters-*
+   - Dark Slate & Vibrant Electric Orange Theme
+   - Strict CSS Compliance: Zero :hover, Zero box-shadow, Zero gradients
+   ========================================================================== */
+
+.product-filters {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 20px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  width: 100%;
+}
+
+.product-filters-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.product-filters-search-wrapper {
+  flex: 2;
+  min-width: 220px;
+}
+
+.product-filters-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.product-filters-input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.product-filters-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.product-filters-input {
+  width: 100%;
+  padding: 10px 34px 10px 36px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.product-filters-input:focus {
+  border-color: var(--color-brand-orange);
+}
+
+.product-filters-clear-input-btn {
+  position: absolute;
+  right: 10px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.product-filters-clear-input-btn:active {
+  color: var(--color-brand-orange);
+}
+
+.product-filters-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.product-filters-select:focus {
+  border-color: var(--color-brand-orange);
+}
+
+.product-filters-actions {
+  display: flex;
+  align-items: center;
+}
+
+.product-filters-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.product-filters-reset-btn:active {
+  background-color: var(--color-brand-orange);
+  border-color: var(--color-brand-orange);
+  color: #ffffff;
+}
+
+/* Mobile responsive filters */
+@media (max-width: 768px) {
+  .product-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .product-filters-item {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .product-filters-actions {
+    width: 100%;
+  }
+
+  .product-filters-reset-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
